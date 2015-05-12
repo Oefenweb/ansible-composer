@@ -12,6 +12,7 @@ Set up composer.
 #### Variables
 
 * `composer_install_dir` [default: `/usr/local/bin`]: Install directory
+* `composer_self_update` [default: `false`]: Whether or not to execute `self-update` on every run
 
 ## Dependencies
 
