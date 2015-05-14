@@ -46,7 +46,7 @@
     chdir: "{{ item.dest | dirname }}"
   register: composer_composer_json_update
   with_items: composer_composer_json_map
-  when: item.update is defined and item.update | bool == true
+  when: item.update is defined and item.update
   changed_when: "'Nothing to install or update' not in composer_composer_json_update.stderr"
   sudo: yes
   sudo_user: "{{ item.owner | default('root') }}"
