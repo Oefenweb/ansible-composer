@@ -19,7 +19,7 @@ Set up composer.
 * `composer_composer_json_map.{n}.owner`: [default: `root`]: The name of the user that should own the file (**optional**)
 * `composer_composer_json_map.{n}.github_oauth`: A GitHub OAuth access token, to prevent hitting GitHub's rate limits on their API (**optional**)
 * `composer_composer_json_map.{n}.options`: [default: `--prefer-dist`]: Additional composer options (**optional**)
-* `composer_composer_json_map.{n}.update`: [default: `false`]: Whether or not to run `update` on every run (**optional**)
+* `composer_composer_json_map.{n}.run_update`: [default: `false`]: Whether or not to run `update` on every run (**optional**)
 
 ## Dependencies
 
