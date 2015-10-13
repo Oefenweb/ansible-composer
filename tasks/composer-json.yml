@@ -1,5 +1,5 @@
----
 # tasks file for composer
+---
 - name: create configuration directory
   file:
     path: "{{ item.dest | dirname }}"
