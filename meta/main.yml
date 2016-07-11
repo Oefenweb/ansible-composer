@@ -25,18 +25,21 @@ galaxy_info:
     - name: FreeBSD
       versions:
         - all
-    - name: Ubuntu
-      versions:
-        - all
     - name: SLES
       versions:
         - all
     - name: GenericLinux
       versions:
         - all
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+        - xenial
     - name: Debian
       versions:
-        - all
+        - wheezy
+        - jessie
   galaxy_tags:
     - system
     - packaging
