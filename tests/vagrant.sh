@@ -24,6 +24,6 @@ if $(lsb_release -r | grep -q '16.04'); then
 else
   PHP_VERSION='5';
 fi
-apt-install "php${PHP_VERSION}-cli" curl;
+apt-update && apt-install "php${PHP_VERSION}-cli" curl;
 
 touch /provisioned;
