@@ -5,8 +5,8 @@
     path: "{{ item.dest | dirname }}"
     state: directory
   with_items: "{{ composer_composer_json_map }}"
-  sudo: true
-  sudo_user: "{{ item.owner | default('root') }}"
+  become: true
+  become_user: "{{ item.owner | default('root') }}"
   tags:
     - composer-composer-json-copy
 
@@ -15,8 +15,8 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items: "{{ composer_composer_json_map }}"
-  sudo: true
-  sudo_user: "{{ item.owner | default('root') }}"
+  become: true
+  become_user: "{{ item.owner | default('root') }}"
   tags:
     - composer-composer-json-copy
 
@@ -28,8 +28,8 @@
   with_items: "{{ composer_composer_json_map }}"
   when: item.github_oauth is defined
   changed_when: false
-  sudo: true
-  sudo_user: "{{ item.owner | default('root') }}"
+  become: true
+  become_user: "{{ item.owner | default('root') }}"
   tags:
     - composer-composer-json-configure
 
@@ -42,8 +42,8 @@
   register: composer_composer_json_install
   with_items: "{{ composer_composer_json_map }}"
   changed_when: "'Nothing to install or update' not in composer_composer_json_install.stderr"
-  sudo: true
-  sudo_user: "{{ item.owner | default('root') }}"
+  become: true
+  become_user: "{{ item.owner | default('root') }}"
   tags:
     - composer-composer-json-install
 
@@ -57,7 +57,7 @@
   with_items: "{{ composer_composer_json_map }}"
   when: item.run_update is defined and item.run_update
   changed_when: "'Nothing to install or update' not in composer_composer_json_update.stderr"
-  sudo: true
-  sudo_user: "{{ item.owner | default('root') }}"
+  become: true
+  become_user: "{{ item.owner | default('root') }}"
   tags:
     - composer-composer-json-update
