@@ -39,9 +39,9 @@
     {{ item.options if item.options is defined else '--prefer-dist' }}
   args:
     chdir: "{{ item.dest | dirname }}"
-  register: composer_composer_json_install
+  register: _composer_composer_json_install
   with_items: "{{ composer_composer_json_map }}"
-  changed_when: "'Nothing to install or update' not in composer_composer_json_install.stderr"
+  changed_when: "'Nothing to install or update' not in _composer_composer_json_install.stderr"
   become: true
   become_user: "{{ item.owner | default('root') }}"
   tags:
@@ -53,10 +53,10 @@
     {{ item.options if item.options is defined else '--prefer-dist' }}
   args:
     chdir: "{{ item.dest | dirname }}"
-  register: composer_composer_json_update
+  register: _composer_composer_json_update
   with_items: "{{ composer_composer_json_map }}"
   when: item.run_update is defined and item.run_update
-  changed_when: "'Nothing to install or update' not in composer_composer_json_update.stderr"
+  changed_when: "'Nothing to install or update' not in _composer_composer_json_update.stderr"
   become: true
   become_user: "{{ item.owner | default('root') }}"
   tags:
