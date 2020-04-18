@@ -77,7 +77,7 @@ before_install:
   - sudo apt-get update -qq
 
   # Install php and curl
-  - sudo apt-get install --yes php5-cli curl
+  - sudo apt-get install --yes php-cli curl
 
 install:
   # Install Ansible.
