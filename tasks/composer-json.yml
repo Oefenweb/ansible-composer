@@ -1,6 +1,6 @@
 # tasks file for composer
 ---
-- name: create configuration directory
+- name: composer.json | create configuration directory
   file:
     path: "{{ item.dest | dirname }}"
     state: directory
@@ -10,7 +10,7 @@
   tags:
     - composer-composer-json-copy
 
-- name: copy composer.json files
+- name: composer.json | copy files
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
@@ -20,7 +20,7 @@
   tags:
     - composer-composer-json-copy
 
-- name: set github-oauth token
+- name: composer.json | set github-oauth token
   command: >
     {{ composer_install_dir }}/composer config github-oauth.github.com {{ item.github_oauth }}
   args:
@@ -33,7 +33,7 @@
   tags:
     - composer-composer-json-configure
 
-- name: run composer install
+- name: composer.json | run composer install
   command: >
     {{ composer_install_dir }}/composer install --no-ansi --no-progress --no-interaction
     {{ item.options if item.options is defined else '--prefer-dist' }}
@@ -47,7 +47,7 @@
   tags:
     - composer-composer-json-install
 
-- name: run composer update
+- name: composer.json | run composer update
   command: >
     {{ composer_install_dir }}/composer update --no-ansi --no-progress --no-interaction
     {{ item.options if item.options is defined else '--prefer-dist' }}

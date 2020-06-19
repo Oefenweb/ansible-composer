@@ -80,9 +80,6 @@ branches:
 before_install:
   - sudo apt-get update -qq
 
-  # Install php and curl
-  - sudo apt-get install --yes php-cli curl
-
 install:
   # Install Ansible.
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
