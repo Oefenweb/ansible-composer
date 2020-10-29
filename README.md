@@ -1,6 +1,7 @@
 ## composer
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-composer.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-composer) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-composer-blue.svg)](https://galaxy.ansible.com/Oefenweb/composer)
+[![Build Status](https://travis-ci.org/Oefenweb/ansible-composer.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-composer)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-composer-blue.svg)](https://galaxy.ansible.com/Oefenweb/composer)
 
 Set up composer.
 
@@ -11,6 +12,7 @@ Set up composer.
 
 #### Variables
 
+* `composer_download_url`: [default: `'https://getcomposer.org/composer-stable.phar'`]: Download url (e.g. `'https://getcomposer.org/composer-1.phar'`)
 * `composer_install_dir`: [default: `/usr/local/bin`]: Install directory
 * `composer_self_update`: [default: `false`]: Whether or not to execute `self-update` on every run
 * `composer_composer_json_map`: [default: `[]`]: A list of `composer.json` files to copy, install and or update

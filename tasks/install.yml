@@ -2,20 +2,12 @@
 ---
 - name: install | download
   shell: >
-    curl -sS https://getcomposer.org/installer | php -- --install-dir={{ composer_install_dir }}
+    curl -sSL {{ composer_download_url }} -o {{ composer_install_dir }}/composer
   args:
     creates: "{{ composer_install_dir }}/composer"
     warn: false
   tags:
     - composer-install-download
-
-- name: install | rename - composer.phar -> composer
-  command: >
-    mv {{ composer_install_dir }}/composer.phar {{ composer_install_dir }}/composer
-  args:
-    creates: "{{ composer_install_dir }}/composer"
-  tags:
-    - composer-install-move
 
 - name: install | check permissions
   file:
