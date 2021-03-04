@@ -1,0 +1,10 @@
+# pre test file for composer
+---
+- name: install dependencies
+  apt:
+    name:
+      - curl
+      - "php{{ (ansible_distribution == 'Debian' and ansible_distribution_major_version is version('8', '<=')) | ternary('5', '') }}-cli"
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"

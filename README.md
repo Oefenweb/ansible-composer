@@ -1,6 +1,6 @@
 ## composer
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-composer.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-composer)
+[![CI](https://github.com/Oefenweb/ansible-composer/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-composer/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-composer-blue.svg)](https://galaxy.ansible.com/Oefenweb/composer)
 
 Set up composer.
@@ -17,7 +17,7 @@ Set up composer.
 * `composer_self_update`: [default: `false`]: Whether or not to execute `self-update` on every run
 * `composer_composer_json_map`: [default: `[]`]: A list of `composer.json` files to copy, install and or update
 * `composer_composer_json_map.{n}.src`: [required]: The local path of the file to copy, can be absolute or relative (e.g. `../../../files/composer/.composer/composer.json`)
-* `composer_composer_json_map.{n}.dest`: [required]: The remote path of the file to copy (e.g. `/etc/mysql/ca-cert.pem`)
+* `composer_composer_json_map.{n}.dest`: [required]: The remote path of the file to copy (e.g. `{{ ansible_env.HOME }}/.composer/composer.json`)
 * `composer_composer_json_map.{n}.owner`: [default: `root`]: The name of the user that should own the file (**optional**)
 * `composer_composer_json_map.{n}.github_oauth`: A GitHub OAuth access token, to prevent hitting GitHub's rate limits on their API (**optional**)
 * `composer_composer_json_map.{n}.options`: [default: `--prefer-dist`]: Additional composer options (**optional**)

@@ -34,13 +34,11 @@ galaxy_info:
         - all
     - name: Ubuntu
       versions:
-        - precise
-        - trusty
         - xenial
         - bionic
+        - focal
     - name: Debian
       versions:
-        - wheezy
         - jessie
         - stretch
         - buster
