@@ -4,8 +4,9 @@
   connection: local
   become: true
   pre_tasks:
-    - include: pre.yml
+    - name: include vars
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
-#  vars:
-#    composer_download_url: 'https://getcomposer.org/composer-1.phar'

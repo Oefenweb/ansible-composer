@@ -1,6 +1,6 @@
 ## composer
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-composer.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-composer)
+[![CI](https://github.com/Oefenweb/ansible-composer/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-composer/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-composer-blue.svg)](https://galaxy.ansible.com/Oefenweb/composer)
 
 Set up composer.
