@@ -1,4 +1,4 @@
-# tasks file for composer
+# tasks file
 ---
 - name: composer.json | create configuration directory
   file:
