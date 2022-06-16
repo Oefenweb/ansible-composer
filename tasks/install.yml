@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install | download
-  shell: >
+  ansible.builtin.shell: >
     curl -sSL {{ composer_download_url }} -o {{ composer_install_dir }}/composer
   args:
     creates: "{{ composer_install_dir }}/composer"
@@ -10,7 +10,7 @@
     - composer-install-download
 
 - name: install | check permissions
-  file:
+  ansible.builtin.file:
     path: "{{ composer_install_dir }}/composer"
     owner: root
     group: root
@@ -19,10 +19,12 @@
     - composer-install-permissions
 
 - name: install | update to the latest version
-  command: >
+  ansible.builtin.command: >
     {{ composer_install_dir }}/composer self-update
   register: _composer_self_update
-  changed_when: "'Updating to version' in _composer_self_update.stderr"
+  changed_when: >
+    'Updating to version' in _composer_self_update.stderr or
+    'Upgrading to version' in _composer_self_update.stdout
   when: composer_self_update
   tags:
     - composer-install-self-update
