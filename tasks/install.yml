@@ -1,11 +1,10 @@
 # tasks file
 ---
-- name: install | download
+- name: install | download  # noqa command-instead-of-module
   ansible.builtin.shell: >
     curl -sSL {{ composer_download_url }} -o {{ composer_install_dir }}/composer
   args:
     creates: "{{ composer_install_dir }}/composer"
-    warn: false
   tags:
     - composer-install-download
 
