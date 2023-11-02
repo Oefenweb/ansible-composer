@@ -35,7 +35,7 @@ None
 ---
 - hosts: all
   roles:
-  - composer
+  - oefenweb.composer
   vars:
     composer_self_update: true
 ```
@@ -46,7 +46,7 @@ None
 ---
 - hosts: all
   roles:
-  - composer
+  - oefenweb.composer
   vars:
     composer_composer_json_map:
       - src: ../../../files/composer/.composer/composer.json
