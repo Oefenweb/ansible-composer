@@ -1,12 +1,14 @@
 # tasks file
 ---
-- ansible.builtin.include_tasks: install.yml
+- name: install
+  ansible.builtin.include_tasks: install.yml
   tags:
     - configuration
     - composer
     - composer-install
 
-- ansible.builtin.include_tasks: composer-json.yml
+- name: composer.json
+  ansible.builtin.include_tasks: composer-json.yml
   tags:
     - configuration
     - composer
