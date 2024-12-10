@@ -13,7 +13,7 @@
     path: "{{ composer_install_dir }}/composer"
     owner: root
     group: root
-    mode: 0755
+    mode: '0755'
   tags:
     - composer-install-permissions
 
